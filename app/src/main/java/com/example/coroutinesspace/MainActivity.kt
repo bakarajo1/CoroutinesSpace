@@ -6,6 +6,8 @@ import androidx.activity.viewModels
 import com.example.coroutinesspace.databinding.ActivityMainBinding
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun buttonListener() {
         binding.buttonEvaluate.setOnClickListener {
-            binding.textView.text=viewModel.calculateOdds(binding.editTextTextPersonName.text.toString().toInt()).toString()
+            lifecycleScope.launch() {binding.textView.text=viewModel.calculateOdds(binding.editTextTextPersonName.text.toString())            }
         }
     }
 
