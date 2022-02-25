@@ -18,13 +18,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         buttonListener()
     }
 
     private fun buttonListener() {
         binding.buttonEvaluate.setOnClickListener {
-            lifecycleScope.launch() {binding.textView.text=viewModel.calculateOdds(binding.editTextTextPersonName.text.toString())            }
+            lifecycleScope.launch() {binding.textView.text=viewModel.calculateOdds(binding.editTextTextPersonName.text.toString())}
         }
     }
 

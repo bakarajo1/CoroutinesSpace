@@ -9,10 +9,7 @@ import kotlinx.coroutines.launch
 
 class MainViewModel:ViewModel() {
 
-     fun decideOddity(number:Int):Boolean{
-        return number%2 != 0
 
-    }
 
      suspend fun calculateOdds(message:String): String {
 
